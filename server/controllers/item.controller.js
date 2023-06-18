@@ -24,8 +24,13 @@ exports.create = async (req, res) => {
 
 // Retrieve all Items from the database (with condition).
 exports.findAll = async (req, res) => {
+  let where='';
+  if(req.query.today === 'true')
+  {
+    where = ' WHERE arrival_date=CURRENT_DATE';
+  }
   const response = await sql.query(
-    'SELECT * FROM truck_details ORDER BY id DESC',
+    `SELECT id, name, TO_CHAR(arrival_date, 'YYYY-MM-DD') as arrival_date FROM truck_details ${where} ORDER BY id DESC`,
   );
   res.status(200).send(response.rows);
 };
@@ -34,7 +39,7 @@ exports.findAll = async (req, res) => {
 exports.findOne = async (req, res) => {
   const itemId = parseInt(req.params.id);
   const response = await sql.query(
-    'SELECT * FROM truck_details where id=$1', [itemId]
+    `SELECT id, name, arrival_date FROM truck_details where id=$1`, [itemId]
   );
   res.status(200).send(response.rows[0]);
 };
