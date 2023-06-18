@@ -14,7 +14,7 @@ exports.create = async (req, res) => {
 
   await sql.query(
     'INSERT INTO truck_details (name, arrival_date, created_dt, updated_dt) VALUES ($1, $2, now(), now())',
-    [name, arrival_date],
+    [name, new Date(arrival_date).toLocaleDateString()],
   );
 
   res.status(201).send({
@@ -51,7 +51,7 @@ exports.update = async (req, res) => {
 
   await sql.query(
     'UPDATE truck_details SET name = $2, arrival_date = $3, updated_dt=now() WHERE id = $1',
-    [itemId, name, arrival_date],
+    [itemId, name, new Date(arrival_date).toLocaleDateString()],
   );
 
   res.status(200).send({ message: 'Item Updated Successfully!' });
