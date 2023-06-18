@@ -7,6 +7,21 @@ Lunch is important and knowing our lunch choices is even more so. While our offi
 3. Editing food trucks.
 4. Listing today’s Food trucks.
 
+# Technology stack & Prerequisites
+1. Node.js (Tested on version 16)
+2. Postgres (Tested on version 13)
+
+#### Schema
+    CREATE TABLE IF NOT EXISTS public.truck_details
+    (
+        id bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
+        name character varying COLLATE pg_catalog."default" NOT NULL,
+        arrival_date date NOT NULL,
+        created_dt time without time zone,
+        updated_dt time without time zone,
+        CONSTRAINT truck_details_pkey PRIMARY KEY (id)
+    )
+
 ## REST API
 
 ### Get all food trucks
