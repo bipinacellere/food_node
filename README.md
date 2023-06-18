@@ -22,6 +22,13 @@ Lunch is important and knowing our lunch choices is even more so. While our offi
         CONSTRAINT truck_details_pkey PRIMARY KEY (id)
     )
 
+### Application Architecture
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/10547276/246676813-e861c59c-404e-41ab-8db3-adb4155cc65c.png)
+
+### Ports
+1. Node.js app is running on port 3000 using command `node app.js`
+2. Postgres default port is 5432
+
 ## REST API
 
 ### Get all food trucks
