@@ -1,6 +1,10 @@
 # Backend App
 Lunch is important and knowing our lunch choices is even more so. While our office manager publishes a paper copy of the food truck schedule once a month, we’d like this service to be available digitally, so we can choose our lunch from the comfort of our desks. For an internal hackathon, you’ve been asked to write a server-and-UI into which we can manually add the food trucks for each month, and access today's choices. 
 
+## Embold Badges
+![Quality Gate](https://app.embold.io/api/badges?repositoryUid=8d7fe2ea8eb1bde4fbf5737fe2e295ee&type=qualityGate)
+![Rating](https://app.embold.io/api/badges?repositoryUid=8d7fe2ea8eb1bde4fbf5737fe2e295ee&type=rating)
+
 # Scope of application
 1. Data entry of the food trucks for each day.
 2. Each food truck only require a name and a date.
