@@ -39,7 +39,7 @@ exports.findAll = async (req, res) => {
 exports.findOne = async (req, res) => {
   const itemId = parseInt(req.params.id);
   const response = await sql.query(
-    `SELECT id, name, arrival_date FROM truck_details where id=$1`, [itemId]
+    `SELECT id, name, TO_CHAR(arrival_date, 'YYYY-MM-DD') as arrival_date FROM truck_details where id=$1`, [itemId]
   );
   res.status(200).send(response.rows[0]);
 };
